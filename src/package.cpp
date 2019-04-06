@@ -19,7 +19,9 @@ Package::Package(
   std::string receiver_address,
   std::string receiver_city,
   std::string receiver_state,
-  std::string receiver_zip
+  std::string receiver_zip,
+  long double weight,
+  long double cost_to_ship
 ) {
   this->sender_name = sender_name;
   this->sender_address = sender_address;
@@ -31,7 +33,8 @@ Package::Package(
   this->receiver_city = receiver_city;
   this->receiver_state = receiver_state;
   this->receiver_zip = receiver_zip;
-
+  this->weight = weight;
+  this->cost_to_ship = cost_to_ship;
 }
 
 // Getters
@@ -76,6 +79,14 @@ const std::string Package::get_receiver_zip() const {
   return this->receiver_zip;
 }
 
+const long double Package::get_weight() const {
+  return this->weight;
+}
+
+const long double Package::get_cost_to_ship() const {
+  return this->cost_to_ship;
+}
+
 // Printing, and outputing as a string
 const std::string Package::to_s() const {
   std::ostringstream out;
@@ -89,7 +100,9 @@ const std::string Package::to_s() const {
       << "receiver address: " << get_receiver_address() << "\n"
       << "receiver city: " << get_receiver_city() << "\n"
       << "receiver state: " << get_receiver_state() << "\n"
-      << "receiver zip: " << get_receiver_zip() << "\n";
+      << "receiver zip: " << get_receiver_zip() << "\n"
+      << "weight: " << get_weight() << "\n"
+      << "cost to ship: " << get_cost_to_ship() << "\n";
 
   return out.str();
 }
@@ -97,6 +110,10 @@ const std::string Package::to_s() const {
 std::ostream &operator<<(std::ostream &output, const Package &p) {
   output << p.to_s();
   return output;
+}
+
+const long double Package::calculate_cost() const {
+  return this->weight * this->cost_to_ship;
 }
 
 } // namespace package

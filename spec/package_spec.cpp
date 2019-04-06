@@ -17,7 +17,10 @@ SCENARIO("package") {
       "84 Rainey Street",
       "Arlen",
       "Texas",
-      "73104"
+      "73104",
+
+      16,
+      8.786
     );
 
     WHEN(".get_sender_name") {
@@ -58,6 +61,18 @@ SCENARIO("package") {
 
     WHEN(".get_receiver_zip") {
       REQUIRE(package.get_receiver_zip() == "73104");
+    }
+
+    WHEN(".get_weight") {
+      REQUIRE(package.get_weight() == 16);
+    }
+
+    WHEN(".get_cost_to_ship") {
+      REQUIRE(package.get_cost_to_ship() == 8.786);
+    }
+
+    WHEN(".calculate_cost") {
+      REQUIRE(package.calculate_cost() == 140.576);
     }
   }
 }

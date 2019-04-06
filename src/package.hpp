@@ -15,11 +15,15 @@ class Package {
               sender_city,
               sender_state,
               sender_zip,
+
               receiver_name,
               receiver_address,
               receiver_city,
               receiver_state,
               receiver_zip;
+
+  long double weight,       // In ounces
+              cost_to_ship; // Per ounce
 
   public:
 
@@ -34,7 +38,9 @@ class Package {
     std::string receiver_address,
     std::string receiver_city,
     std::string receiver_state,
-    std::string receiver_zip
+    std::string receiver_zip,
+    long double weight,
+    long double cost_to_ship
   );
 
   // Getters
@@ -50,9 +56,15 @@ class Package {
   const std::string get_receiver_state() const;
   const std::string get_receiver_zip() const;
 
+  const long double get_weight() const;
+  const long double get_cost_to_ship() const;
+
   // Printing
   const std::string to_s() const;
   friend std::ostream &operator<<(std::ostream &output, const Package &p);
+
+
+  const long double calculate_cost() const;
 };
 
 } // namespace package
