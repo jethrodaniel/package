@@ -13,7 +13,8 @@ class Package {
   std::string sender_name,
               sender_address,
               sender_city,
-              sender_state;
+              sender_state,
+              sender_zip;
 
   public:
 
@@ -22,7 +23,8 @@ class Package {
     std::string sender_name,
     std::string sender_address,
     std::string sender_city,
-    std::string sender_state
+    std::string sender_state,
+    std::string sender_zip
   );
 
   // Getters
@@ -30,6 +32,7 @@ class Package {
   const std::string get_sender_address() const;
   const std::string get_sender_city() const;
   const std::string get_sender_state() const;
+  const std::string get_sender_zip() const;
 
   // Printing
   const std::string to_s() const;

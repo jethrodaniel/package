@@ -10,7 +10,8 @@ SCENARIO("package") {
       "Alexander Graham Bell",
       "84 Rainey Street",
       "Arlen",
-      "Texas"
+      "Texas",
+      "73104"
     );
 
     WHEN( ".get_sender_name" ) {
@@ -29,8 +30,8 @@ SCENARIO("package") {
       REQUIRE(package.get_sender_state() == "Texas");
     }
 
-    //WHEN( ".sender_zip" ) {
-    //  REQUIRE(package.sender_zip() == "78104");
-    //}
+    WHEN( ".sender_zip" ) {
+      REQUIRE(package.get_sender_zip() == "73104");
+    }
   }
 }
