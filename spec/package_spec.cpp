@@ -6,8 +6,10 @@
 
 SCENARIO("package") {
   GIVEN("a package") {
-    const package::Package package("Alexander Graham Bell",
-      "84 Rainey Street"
+    const package::Package package(
+      "Alexander Graham Bell",
+      "84 Rainey Street",
+      "Arlen"
     );
 
     WHEN( ".get_sender_name" ) {
@@ -18,9 +20,9 @@ SCENARIO("package") {
       REQUIRE(package.get_sender_address() == "84 Rainey Street");
     }
 
-    //WHEN( ".sender_city" ) {
-    //  REQUIRE(package.sender_address() == "Arlen");
-    //}
+    WHEN( ".sender_city" ) {
+      REQUIRE(package.get_sender_city() == "Arlen");
+    }
 
     //WHEN( ".sender_state" ) {
     //  REQUIRE(package.sender_state() == "Texas");
