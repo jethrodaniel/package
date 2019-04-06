@@ -9,7 +9,8 @@ SCENARIO("package") {
     const package::Package package(
       "Alexander Graham Bell",
       "84 Rainey Street",
-      "Arlen"
+      "Arlen",
+      "Texas"
     );
 
     WHEN( ".get_sender_name" ) {
@@ -24,9 +25,9 @@ SCENARIO("package") {
       REQUIRE(package.get_sender_city() == "Arlen");
     }
 
-    //WHEN( ".sender_state" ) {
-    //  REQUIRE(package.sender_state() == "Texas");
-    //}
+    WHEN( ".sender_state" ) {
+      REQUIRE(package.get_sender_state() == "Texas");
+    }
 
     //WHEN( ".sender_zip" ) {
     //  REQUIRE(package.sender_zip() == "78104");

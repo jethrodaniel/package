@@ -12,7 +12,8 @@ class Package {
 
   std::string sender_name,
               sender_address,
-              sender_city;
+              sender_city,
+              sender_state;
 
   public:
 
@@ -20,13 +21,15 @@ class Package {
   explicit Package(
     std::string sender_name,
     std::string sender_address,
-    std::string sender_city
+    std::string sender_city,
+    std::string sender_state
   );
 
   // Getters
   const std::string get_sender_name() const;
   const std::string get_sender_address() const;
   const std::string get_sender_city() const;
+  const std::string get_sender_state() const;
 
   // Printing
   const std::string to_s() const;
