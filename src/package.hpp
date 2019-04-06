@@ -29,18 +29,18 @@ class Package {
 
   // Constructor
   explicit Package(
-    std::string sender_name,
-    std::string sender_address,
-    std::string sender_city,
-    std::string sender_state,
-    std::string sender_zip,
-    std::string receiver_name,
-    std::string receiver_address,
-    std::string receiver_city,
-    std::string receiver_state,
-    std::string receiver_zip,
-    long double weight,
-    long double cost_to_ship
+   const std::string sender_name,
+   const std::string sender_address,
+   const std::string sender_city,
+   const std::string sender_state,
+   const std::string sender_zip,
+   const std::string receiver_name,
+   const std::string receiver_address,
+   const std::string receiver_city,
+   const std::string receiver_state,
+   const std::string receiver_zip,
+   const long double weight,
+   const long double cost_to_ship
   );
 
   // Getters
