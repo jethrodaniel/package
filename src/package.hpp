@@ -22,8 +22,8 @@ class Package {
               receiver_state,
               receiver_zip;
 
-  long double weight,       // In ounces
-              cost_to_ship; // Per ounce
+  long double weight, // In ounces
+              shipping_cost_per_ounce;
 
   public:
 
@@ -40,7 +40,7 @@ class Package {
    const std::string receiver_state,
    const std::string receiver_zip,
    long double weight,
-   long double cost_to_ship
+   long double shipping_cost_per_ounce
   );
 
   // Getters
@@ -57,7 +57,7 @@ class Package {
   const std::string get_receiver_zip() const;
 
   long double get_weight() const;
-  long double get_cost_to_ship() const;
+  long double get_shipping_cost_per_ounce() const;
 
   // Printing
   const std::string to_s() const;

@@ -21,7 +21,7 @@ Package::Package(
   const std::string receiver_state,
   const std::string receiver_zip,
   const long double weight,
-  const long double cost_to_ship
+  const long double shipping_cost_per_ounce
 ) {
   this->sender_name = sender_name;
   this->sender_address = sender_address;
@@ -34,7 +34,7 @@ Package::Package(
   this->receiver_state = receiver_state;
   this->receiver_zip = receiver_zip;
   this->weight = weight;
-  this->cost_to_ship = cost_to_ship;
+  this->shipping_cost_per_ounce = shipping_cost_per_ounce;
 }
 
 // Getters
@@ -83,8 +83,8 @@ long double Package::get_weight() const {
   return this->weight;
 }
 
-long double Package::get_cost_to_ship() const {
-  return this->cost_to_ship;
+long double Package::get_shipping_cost_per_ounce() const {
+  return this->shipping_cost_per_ounce;
 }
 
 // Printing, and outputing as a string
@@ -101,8 +101,8 @@ const std::string Package::to_s() const {
       << "receiver city: " << get_receiver_city() << "\n"
       << "receiver state: " << get_receiver_state() << "\n"
       << "receiver zip: " << get_receiver_zip() << "\n"
-      << "weight: " << get_weight() << "\n"
-      << "cost to ship: " << get_cost_to_ship() << "\n";
+      << "weight (oz): " << get_weight() << "\n"
+      << "shipping cost per ounce ($/oz): " << get_shipping_cost_per_ounce() << "\n";
 
   return out.str();
 }
@@ -113,7 +113,7 @@ std::ostream &operator<<(std::ostream &output, const Package &p) {
 }
 
 long double Package::calculate_cost() const {
-  return this->weight * this->cost_to_ship;
+  return this->weight * this->shipping_cost_per_ounce;
 }
 
 } // namespace package

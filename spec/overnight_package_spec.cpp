@@ -2,11 +2,11 @@
 
 #include "spec_helper.cpp"
 
-#include "../src/package.hpp"
+#include "../src/overnight_package.hpp"
 
-SCENARIO("package") {
+SCENARIO("overnight_package") {
   GIVEN("a package") {
-    const package::Package package(
+    const package::OvernightPackage package(
       "Alexander Graham Bell",
       "84 Rainey Street",
       "Arlen",
@@ -20,8 +20,15 @@ SCENARIO("package") {
       "73104",
 
       16,
-      8.786
+      8.786,
+      2.3456
     );
+
+    WHEN(".get_flat_fee") {
+      REQUIRE(package.get_additional_fee_per_ounce() == 2.3456);
+    }
+
+    // Same test cases from the base class
 
     WHEN(".get_sender_name") {
       REQUIRE(package.get_sender_name() == "Alexander Graham Bell");
@@ -88,7 +95,8 @@ SCENARIO("package") {
         "receiver state: Texas\n"
         "receiver zip: 73104\n"
         "weight (oz): 16\n"
-        "shipping cost per ounce ($/oz): 8.786\n";
+        "shipping per ounce ($/oz): 8.786\n"
+        "additional fee per ounce ($/oz): 2.3456\n";
 
       REQUIRE(package.to_s() == expected);
     }

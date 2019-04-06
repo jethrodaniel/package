@@ -1,19 +1,19 @@
-#ifndef two_day_package_H
-#define two_day_package_H
+#ifndef overnight_package_H
+#define overnight_package_H
 
 #include "package.hpp"
 
 namespace package {
 
-class TwoDayPackage : public Package {
+class OvernightPackage : public Package {
   private:
 
-  long double flat_fee;
+  long double additional_fee_per_ounce;
 
   public:
 
   // Constructor
-  explicit TwoDayPackage(
+  explicit OvernightPackage(
     const std::string sender_name,
     const std::string sender_address,
     const std::string sender_city,
@@ -25,16 +25,16 @@ class TwoDayPackage : public Package {
     const std::string receiver_state,
     const std::string receiver_zip,
     const long double weight,
-    const long double shipping_cost_per_ounce,
-    const long double flat_fee
+    const long double cost_to_ship,
+    const long double additional_fee_per_ounce
   );
 
   // Getters
-  long double get_flat_fee() const;
+  long double get_additional_fee_per_ounce() const;
 
   // Printing
   const std::string to_s() const;
-  friend std::ostream &operator<<(std::ostream &output, const TwoDayPackage &p);
+  friend std::ostream &operator<<(std::ostream &output, const OvernightPackage &p);
 };
 
 } // namespace package

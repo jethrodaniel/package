@@ -1,16 +1,16 @@
 // Name: Mark Delk
 //
-// TwoDayPackage class member functions.
+// OvernightPackage class member functions.
 //
 // Also defines one non-member `<<` operator overload for printing
 
 #include "package.hpp"
-#include "two_day_package.hpp"
+#include "overnight_package.hpp"
 
 namespace package {
 
 // Constructor
-TwoDayPackage::TwoDayPackage(
+OvernightPackage::OvernightPackage(
   const std::string sender_name,
   const std::string sender_address,
   const std::string sender_city,
@@ -23,7 +23,7 @@ TwoDayPackage::TwoDayPackage(
   const std::string receiver_zip,
   const long double weight,
   const long double shipping_cost_per_ounce,
-  const long double flat_fee
+  const long double additional_fee_per_ounce
 ) : Package(sender_name,
             sender_address,
             sender_city,
@@ -37,16 +37,16 @@ TwoDayPackage::TwoDayPackage(
             weight,
             shipping_cost_per_ounce)
 {
-  this->flat_fee = flat_fee;
+  this->additional_fee_per_ounce = additional_fee_per_ounce;
 }
 
 // Getters
-long double TwoDayPackage::get_flat_fee() const {
-  return this->flat_fee;
+long double OvernightPackage::get_additional_fee_per_ounce() const {
+  return this->additional_fee_per_ounce;
 }
 
 // Printing, and outputing as a string
-const std::string TwoDayPackage::to_s() const {
+const std::string OvernightPackage::to_s() const {
   std::ostringstream out;
 
   out << "sender name: " << get_sender_name() << "\n"
@@ -60,13 +60,13 @@ const std::string TwoDayPackage::to_s() const {
       << "receiver state: " << get_receiver_state() << "\n"
       << "receiver zip: " << get_receiver_zip() << "\n"
       << "weight (oz): " << get_weight() << "\n"
-      << "cost to ship ($/oz): " << get_shipping_cost_per_ounce() << "\n"
-      << "flat fee ($): " << get_flat_fee() << "\n";
+      << "shipping per ounce ($/oz): " << get_shipping_cost_per_ounce() << "\n"
+      << "additional fee per ounce ($/oz): " << get_additional_fee_per_ounce() << "\n";
 
   return out.str();
 }
 
-std::ostream &operator<<(std::ostream &output, const TwoDayPackage &p) {
+std::ostream &operator<<(std::ostream &output, const OvernightPackage &p) {
   output << p.to_s();
   return output;
 }

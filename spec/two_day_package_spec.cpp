@@ -75,8 +75,8 @@ SCENARIO("two_day_package") {
       REQUIRE(package.get_weight() == 16);
     }
 
-    WHEN(".get_cost_to_ship") {
-      REQUIRE(package.get_cost_to_ship() == 8.786);
+    WHEN(".get_shipping_cost_per_ounce") {
+      REQUIRE(package.get_shipping_cost_per_ounce() == 8.786);
     }
 
     WHEN(".calculate_cost") {
@@ -95,9 +95,9 @@ SCENARIO("two_day_package") {
         "receiver city: Arlen\n"
         "receiver state: Texas\n"
         "receiver zip: 73104\n"
-        "weight: 16\n"
-        "cost to ship: 8.786\n"
-        "flat fee: 12.3456\n";
+        "weight (oz): 16\n"
+        "cost to ship ($/oz): 8.786\n"
+        "flat fee ($): 12.3456\n";
 
       REQUIRE(package.to_s() == expected);
     }
