@@ -72,4 +72,8 @@ std::ostream &operator<<(std::ostream &output, const TwoDayPackage &p) {
   return output;
 }
 
+long double TwoDayPackage::calculate_cost() const {
+  return (this->weight * this->shipping_cost_per_ounce) + this->flat_fee;
+}
+
 } // namespace package

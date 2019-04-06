@@ -80,7 +80,7 @@ SCENARIO("two_day_package") {
     }
 
     WHEN(".calculate_cost") {
-      REQUIRE(package.calculate_cost() == 140.576_a);
+      REQUIRE(package.calculate_cost() == 152.922_a);
     }
 
     WHEN(".to_s") {
@@ -98,7 +98,7 @@ SCENARIO("two_day_package") {
         "weight (oz): 16\n"
         "cost to ship ($/oz): 8.786\n"
         "flat fee ($): 12.3456\n"
-        "TOTAL ($): 140.576\n";
+        "TOTAL ($): 152.922\n";
 
       REQUIRE(package.to_s() == expected);
     }

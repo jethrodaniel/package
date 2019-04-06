@@ -39,6 +39,8 @@ class TwoDayPackage : public Package {
   // Printing
   const std::string to_s() const;
   friend std::ostream &operator<<(std::ostream &output, const TwoDayPackage &p);
+
+  long double calculate_cost() const;
 };
 
 } // namespace package
