@@ -61,7 +61,7 @@ const std::string TwoDayPackage::to_s() const {
       << "receiver zip: " << get_receiver_zip() << "\n"
       << "weight: " << get_weight() << "\n"
       << "cost to ship: " << get_cost_to_ship() << "\n"
-      << "flat fee" << get_flat_fee() << "\n";
+      << "flat fee: " << get_flat_fee() << "\n";
 
   return out.str();
 }

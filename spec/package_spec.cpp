@@ -74,5 +74,23 @@ SCENARIO("package") {
     WHEN(".calculate_cost") {
       REQUIRE(package.calculate_cost() == 140.576);
     }
+
+    WHEN(".to_s") {
+      std::string expected =
+        "sender name: Alexander Graham Bell\n"
+        "sender address: 84 Rainey Street\n"
+        "sender city: Arlen\n"
+        "sender state: Texas\n"
+        "sender zip: 73104\n"
+        "receiver name: Dr. Watson\n"
+        "receiver address: 84 Rainey Street\n"
+        "receiver city: Arlen\n"
+        "receiver state: Texas\n"
+        "receiver zip: 73104\n"
+        "weight: 16\n"
+        "cost to ship: 8.786\n";
+
+      REQUIRE(package.to_s() == expected);
+    }
   }
 }

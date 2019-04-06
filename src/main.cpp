@@ -4,6 +4,25 @@
 
 //int main(int argc, char **argv) {
 int main() {
-  std::cout << "hello, world!\n";
+  const package::Package package(
+    "Alexander Graham Bell",
+    "84 Rainey Street",
+    "Arlen",
+    "Texas",
+    "73104",
+
+    "Dr. Watson",
+    "84 Rainey Street",
+    "Arlen",
+    "Texas",
+    "73104",
+
+    16,
+    8.786
+  );
+
+  std::string output = package.to_s();
+
+  std::cout << output;
 }
 
