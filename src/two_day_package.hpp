@@ -1,3 +1,7 @@
+// Name: Mark Delk
+//
+// TwoDayPackage class definition.
+
 #ifndef two_day_package_H
 #define two_day_package_H
 
@@ -6,7 +10,7 @@
 namespace package {
 
 class TwoDayPackage : public Package {
-  private:
+  protected:
 
   long double flat_fee;
 

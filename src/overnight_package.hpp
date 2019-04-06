@@ -1,3 +1,7 @@
+// Name: Mark Delk
+//
+// OvernightPackage class definition.
+
 #ifndef overnight_package_H
 #define overnight_package_H
 
@@ -6,7 +10,7 @@
 namespace package {
 
 class OvernightPackage : public Package {
-  private:
+  protected:
 
   long double additional_fee_per_ounce;
 
@@ -35,6 +39,8 @@ class OvernightPackage : public Package {
   // Printing
   const std::string to_s() const;
   friend std::ostream &operator<<(std::ostream &output, const OvernightPackage &p);
+
+  long double calculate_cost() const;
 };
 
 } // namespace package

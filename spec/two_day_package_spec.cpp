@@ -26,7 +26,7 @@ SCENARIO("two_day_package") {
     );
 
     WHEN(".get_flat_fee") {
-      REQUIRE(package.get_flat_fee() == 12.3456);
+      REQUIRE(package.get_flat_fee() == 12.3456_a);
     }
 
     // Same test cases from the base class
@@ -72,15 +72,15 @@ SCENARIO("two_day_package") {
     }
 
     WHEN(".get_weight") {
-      REQUIRE(package.get_weight() == 16);
+      REQUIRE(package.get_weight() == 16_a);
     }
 
     WHEN(".get_shipping_cost_per_ounce") {
-      REQUIRE(package.get_shipping_cost_per_ounce() == 8.786);
+      REQUIRE(package.get_shipping_cost_per_ounce() == 8.786_a);
     }
 
     WHEN(".calculate_cost") {
-      REQUIRE(package.calculate_cost() == 140.576);
+      REQUIRE(package.calculate_cost() == 140.576_a);
     }
 
     WHEN(".to_s") {
@@ -97,7 +97,8 @@ SCENARIO("two_day_package") {
         "receiver zip: 73104\n"
         "weight (oz): 16\n"
         "cost to ship ($/oz): 8.786\n"
-        "flat fee ($): 12.3456\n";
+        "flat fee ($): 12.3456\n"
+        "TOTAL ($): 140.576\n";
 
       REQUIRE(package.to_s() == expected);
     }

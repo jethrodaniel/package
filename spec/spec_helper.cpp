@@ -1,15 +1,6 @@
-/*
+#include "../vendor/Catch2/include/catch.hpp"
 
-#include <sstream>
-#include <fstream>
-
-// Returns a file as a string
-static std::string to_s(std::string filename) {
-  std::ifstream ifs(filename);
-  std::stringstream buffer;
-
-  buffer << ifs.rdbuf();
-  return buffer.str();
-}
-
-*/
+// Use `_a` to create an aproximate value, like `3.1459_a'
+//
+// See <https://github.com/catchorg/Catch2/blob/master/docs/assertions.md>
+using namespace Catch::literals;

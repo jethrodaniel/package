@@ -102,7 +102,8 @@ const std::string Package::to_s() const {
       << "receiver state: " << get_receiver_state() << "\n"
       << "receiver zip: " << get_receiver_zip() << "\n"
       << "weight (oz): " << get_weight() << "\n"
-      << "shipping cost per ounce ($/oz): " << get_shipping_cost_per_ounce() << "\n";
+      << "shipping cost per ounce ($/oz): " << get_shipping_cost_per_ounce() << "\n"
+      << "TOTAL ($): " << calculate_cost() << "\n";
 
   return out.str();
 }

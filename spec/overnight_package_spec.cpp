@@ -24,8 +24,8 @@ SCENARIO("overnight_package") {
       2.3456
     );
 
-    WHEN(".get_flat_fee") {
-      REQUIRE(package.get_additional_fee_per_ounce() == 2.3456);
+    WHEN(".get_additional_fee_per_ounce") {
+      REQUIRE(package.get_additional_fee_per_ounce() == 2.3456_a);
     }
 
     // Same test cases from the base class
@@ -71,15 +71,15 @@ SCENARIO("overnight_package") {
     }
 
     WHEN(".get_weight") {
-      REQUIRE(package.get_weight() == 16);
+      REQUIRE(package.get_weight() == 16_a);
     }
 
     WHEN(".get_shipping_cost_per_ounce") {
-      REQUIRE(package.get_shipping_cost_per_ounce() == 8.786);
+      REQUIRE(package.get_shipping_cost_per_ounce() == 8.786_a);
     }
 
     WHEN(".calculate_cost") {
-      REQUIRE(package.calculate_cost() == 140.576);
+      REQUIRE(package.calculate_cost() == 178.106_a);
     }
 
     WHEN(".to_s") {
@@ -96,7 +96,8 @@ SCENARIO("overnight_package") {
         "receiver zip: 73104\n"
         "weight (oz): 16\n"
         "shipping per ounce ($/oz): 8.786\n"
-        "additional fee per ounce ($/oz): 2.3456\n";
+        "additional fee per ounce ($/oz): 2.3456\n"
+        "TOTAL ($): 178.106\n";
 
       REQUIRE(package.to_s() == expected);
     }

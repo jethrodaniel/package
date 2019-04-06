@@ -45,6 +45,10 @@ long double OvernightPackage::get_additional_fee_per_ounce() const {
   return this->additional_fee_per_ounce;
 }
 
+long double OvernightPackage::calculate_cost() const {
+  return this->weight * (this->shipping_cost_per_ounce + this->additional_fee_per_ounce);
+}
+
 // Printing, and outputing as a string
 const std::string OvernightPackage::to_s() const {
   std::ostringstream out;
@@ -61,7 +65,8 @@ const std::string OvernightPackage::to_s() const {
       << "receiver zip: " << get_receiver_zip() << "\n"
       << "weight (oz): " << get_weight() << "\n"
       << "shipping per ounce ($/oz): " << get_shipping_cost_per_ounce() << "\n"
-      << "additional fee per ounce ($/oz): " << get_additional_fee_per_ounce() << "\n";
+      << "additional fee per ounce ($/oz): " << get_additional_fee_per_ounce() << "\n"
+      << "TOTAL ($): " << calculate_cost() << "\n";
 
   return out.str();
 }

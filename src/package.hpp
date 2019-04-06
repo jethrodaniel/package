@@ -1,3 +1,7 @@
+// Name: Mark Delk
+//
+// Package class definition.
+
 #ifndef package_H
 #define package_H
 
@@ -7,8 +11,9 @@
 
 namespace package {
 
+
 class Package {
-  private:
+  protected:
 
   std::string sender_name,
               sender_address,
@@ -29,18 +34,18 @@ class Package {
 
   // Constructor
   explicit Package(
-   const std::string sender_name,
-   const std::string sender_address,
-   const std::string sender_city,
-   const std::string sender_state,
-   const std::string sender_zip,
-   const std::string receiver_name,
-   const std::string receiver_address,
-   const std::string receiver_city,
-   const std::string receiver_state,
-   const std::string receiver_zip,
-   long double weight,
-   long double shipping_cost_per_ounce
+    const std::string sender_name,
+    const std::string sender_address,
+    const std::string sender_city,
+    const std::string sender_state,
+    const std::string sender_zip,
+    const std::string receiver_name,
+    const std::string receiver_address,
+    const std::string receiver_city,
+    const std::string receiver_state,
+    const std::string receiver_zip,
+    long double weight,
+    long double shipping_cost_per_ounce
   );
 
   // Getters
