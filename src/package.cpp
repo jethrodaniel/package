@@ -79,11 +79,11 @@ const std::string Package::get_receiver_zip() const {
   return this->receiver_zip;
 }
 
-const long double Package::get_weight() const {
+long double Package::get_weight() const {
   return this->weight;
 }
 
-const long double Package::get_cost_to_ship() const {
+long double Package::get_cost_to_ship() const {
   return this->cost_to_ship;
 }
 
@@ -112,7 +112,7 @@ std::ostream &operator<<(std::ostream &output, const Package &p) {
   return output;
 }
 
-const long double Package::calculate_cost() const {
+long double Package::calculate_cost() const {
   return this->weight * this->cost_to_ship;
 }
 

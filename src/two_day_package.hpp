@@ -30,7 +30,7 @@ class TwoDayPackage : public Package {
   );
 
   // Getters
-  const long double get_flat_fee() const;
+  long double get_flat_fee() const;
 
   // Printing
   const std::string to_s() const;

@@ -38,7 +38,7 @@ usage:
 .PHONY: build
 build:
 	@echo "Compiling source code into ./$(PROGRAM_NAME)"
-	@$(CPP) $(CPP_FLAGS) $(SOURCES) $(MAIN) -o $(PROGRAM_NAME)
+	$(CPP) $(CPP_FLAGS) $(SOURCES) $(MAIN) -o $(PROGRAM_NAME)
 
 .PHONY: clean
 clean:

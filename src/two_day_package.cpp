@@ -41,7 +41,7 @@ TwoDayPackage::TwoDayPackage(
 }
 
 // Getters
-const long double TwoDayPackage::get_flat_fee() const {
+long double TwoDayPackage::get_flat_fee() const {
   return this->flat_fee;
 }
 

@@ -39,8 +39,8 @@ class Package {
    const std::string receiver_city,
    const std::string receiver_state,
    const std::string receiver_zip,
-   const long double weight,
-   const long double cost_to_ship
+   long double weight,
+   long double cost_to_ship
   );
 
   // Getters
@@ -56,15 +56,15 @@ class Package {
   const std::string get_receiver_state() const;
   const std::string get_receiver_zip() const;
 
-  const long double get_weight() const;
-  const long double get_cost_to_ship() const;
+  long double get_weight() const;
+  long double get_cost_to_ship() const;
 
   // Printing
   const std::string to_s() const;
   friend std::ostream &operator<<(std::ostream &output, const Package &p);
 
 
-  const long double calculate_cost() const;
+  long double calculate_cost() const;
 };
 
 } // namespace package
